@@ -1,0 +1,44 @@
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+
+# Dependencies (add your ecosystem below)
+node_modules/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Coverage
+coverage/
+.coverage
+*.lcov
+
+# Misc
+*.tmp
+*.bak

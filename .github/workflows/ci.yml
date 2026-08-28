@@ -1,0 +1,58 @@
+# CI — runs on every push and pull request to main.
+#
+# HOW TO ADAPT THIS FILE
+# ──────────────────────
+# 1. Replace the "Setup" step with your language/runtime (examples below).
+# 2. Replace the "Install dependencies", "Lint", and "Test" steps with the
+#    commands your project actually uses.
+# 3. Remove any steps that don't apply.
+#
+# Common "Setup" step replacements:
+#
+#   Node.js:
+#     - uses: actions/setup-node@v4
+#       with: { node-version: '22' }
+#
+#   Python:
+#     - uses: actions/setup-python@v5
+#       with: { python-version: '3.12' }
+#
+#   Go:
+#     - uses: actions/setup-go@v5
+#       with: { go-version: '1.22' }
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-test:
+    name: Build & Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ── Setup ────────────────────────────────────────────────────────────
+      # Replace this block with your language/runtime (see examples above).
+      - name: Setup runtime
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      # ── Install dependencies ─────────────────────────────────────────────
+      - name: Install dependencies
+        run: npm ci
+
+      # ── Lint ─────────────────────────────────────────────────────────────
+      - name: Lint
+        run: npm run lint
+
+      # ── Test ─────────────────────────────────────────────────────────────
+      - name: Test
+        run: npm test
