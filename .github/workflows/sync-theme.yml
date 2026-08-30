@@ -1,0 +1,65 @@
+name: Sync theme SCSS from personal site
+
+# Polls the personal website repo's dark.scss on a schedule and opens a PR
+# here whenever it has drifted from our local copy. The two repos are
+# independent (this one is read-only re: the personal site), so we can't
+# react to its pushes directly — polling is the simplest cross-repo option
+# that doesn't require touching the source repo.
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # daily at 06:00 UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  SOURCE_REPO: guillaumegilles/guillaumegilles.github.io
+  SOURCE_BRANCH: main
+  SOURCE_PATH: assets/dark.scss
+  LOCAL_PATH: theme/dark.scss
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch upstream dark.scss
+        run: |
+          curl -fsSL \
+            "https://raw.githubusercontent.com/${SOURCE_REPO}/${SOURCE_BRANCH}/${SOURCE_PATH}" \
+            -o /tmp/upstream-dark.scss
+
+      - name: Compare with local copy
+        id: diff
+        run: |
+          if diff -q /tmp/upstream-dark.scss "${LOCAL_PATH}" > /dev/null 2>&1; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Update local copy
+        if: steps.diff.outputs.changed == 'true'
+        run: cp /tmp/upstream-dark.scss "${LOCAL_PATH}"
+
+      - name: Open pull request
+        if: steps.diff.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore(theme): sync dark.scss from ${{ env.SOURCE_REPO }}"
+          title: "chore(theme): sync dark.scss from personal site"
+          body: |
+            Upstream `${{ env.SOURCE_PATH }}` changed in
+            [`${{ env.SOURCE_REPO }}`](https://github.com/${{ env.SOURCE_REPO }}/blob/${{ env.SOURCE_BRANCH }}/${{ env.SOURCE_PATH }}).
+
+            This PR was opened automatically by
+            `.github/workflows/sync-theme.yml`. Review the diff, then merge
+            to bring the Quarto site's theme in line with the personal site.
+          branch: sync/theme-dark-scss
+          delete-branch: true
+          labels: theme, automated
