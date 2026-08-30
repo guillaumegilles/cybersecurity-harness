@@ -79,9 +79,7 @@ website:
 
 format:
   html:
-    theme:
-      light: cosmo
-      dark: darkly
+    theme: [darkly, theme/dark.scss]
     toc: true
     toc-depth: 3
     code-copy: true
