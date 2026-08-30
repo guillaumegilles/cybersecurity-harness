@@ -1,4 +1,4 @@
-# Onboarding Guide — Alert Investigation Harness
+# Onboarding Guide — skekOk
 
 > **Start here.** This guide walks a newcomer — SOC analyst or developer — from
 > zero to a running investigation. It explains the concepts first, then the

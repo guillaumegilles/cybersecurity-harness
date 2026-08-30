@@ -5,7 +5,7 @@ project:
   output-dir: _site
 
 website:
-  title: "Alert Investigation Harness"
+  title: "skekOk"
   description: >
     A read-only, evidence-driven AI agent harness that assists SOC analysts
     with investigating a single security alert.
@@ -63,7 +63,7 @@ website:
           - text: "Deployment"
             href: docs/deployment.md
   page-footer:
-    left: "Alert Investigation Harness — GPL-3.0"
+    left: "skekOk — GPL-3.0"
     right: "Built with [Quarto](https://quarto.org)"
 
 format:

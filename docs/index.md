@@ -1,12 +1,12 @@
 ---
-title: "Alert Investigation Harness"
+title: "skekOk — The Scroll-Keeper"
 subtitle: "A read-only, evidence-driven AI agent harness for SOC alert investigation"
 ---
 
-The **Alert Investigation Harness** assists SOC analysts with investigating a
-single security alert — producing a structured, evidence-backed investigation
-report while guaranteeing that the agent stays inside explicit authorization,
-data-access, time, and tool-use boundaries.
+**skekOk** assists SOC analysts with investigating a single security alert —
+producing a structured, evidence-backed investigation report while
+guaranteeing that the agent stays inside explicit authorization, data-access,
+time, and tool-use boundaries.
 
 ## Key guarantees
 

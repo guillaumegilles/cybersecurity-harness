@@ -4,8 +4,9 @@ Guidance for AI coding agents working in this repository.
 
 ## Project
 
-A read-only, evidence-driven cybersecurity agent harness for SOC single-alert
-investigation. The implemented feature is `001-alert-investigation-harness`.
+**skekOk** ("the Scroll-Keeper") is a read-only, evidence-driven cybersecurity
+agent harness for SOC single-alert investigation. The implemented feature is
+`001-alert-investigation-harness`.
 
 <!-- SPECKIT START -->
 For additional context about technologies to be used, project structure,

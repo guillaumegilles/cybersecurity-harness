@@ -1,8 +1,9 @@
-# Alert Investigation Harness — Overview
+# skekOk — Overview
 
-A read-only, evidence-driven agent harness that assists SOC analysts with
-investigating a single security alert. Implements
-`specs/001-alert-investigation-harness/spec.md` under the project constitution.
+**skekOk** ("the Scroll-Keeper") is a read-only, evidence-driven agent harness
+that assists SOC analysts with investigating a single security alert.
+Implements `specs/001-alert-investigation-harness/spec.md` under the project
+constitution.
 
 > This page is the high-level overview. The full documentation set starts at
 > the [documentation index](index.md) — architecture, workflow, safety model, data
@@ -83,3 +84,13 @@ Safety suites are binary release gates (Constitution VI) — never averaged.
 - The API runs investigations synchronously (deterministic synthetic
   sources); background execution arrives with the production pilot feature.
 - Cross-tenant isolation tests are N/A: the MVP is single-tenant (plan.md).
+
+## About the name
+
+skekOk is named for the Scroll-Keeper of Jim Henson's *The Dark Crystal* — the
+Skeksis' archivist, who read the histories and kept the record but held no
+power to act on it. The harness follows the same division of labor: it reads
+evidence, keeps an append-only record of everything it observed and inferred,
+and hands judgment to the analyst. The model has no tool access and no
+authority to act; the deterministic code around it is the only thing that
+enforces policy, budgets, and audit. skekOk investigates — it doesn't act.

@@ -1,12 +1,19 @@
-# Cybersecurity Harness
+# skekOk 🕮
+
+*The Scroll-Keeper*
 
 ![License](https://img.shields.io/github/license/guillaumegilles/cybersecurity-harness)
 ![Stars](https://img.shields.io/github/stars/guillaumegilles/cybersecurity-harness?style=social)
 ![Issues](https://img.shields.io/github/issues/guillaumegilles/cybersecurity-harness)
 
+> "skekOk doesn't act. skekOk attests."
+>
 > A read-only, evidence-driven AI agent harness that assists SOC analysts with
 > investigating a single security alert — with provable safety boundaries,
 > full evidence provenance, and a tamper-evident audit trail.
+
+The name nods to *The Dark Crystal*'s skekOk, the Skeksis' archivist: keeper
+of the record, not wielder of power.
 
 ---
 
