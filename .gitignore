@@ -42,3 +42,14 @@ coverage/
 # Misc
 *.tmp
 *.bak
+
+# Harness
+harness.db
+*.sqlite3
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Quarto
+_site/
+/.quarto/

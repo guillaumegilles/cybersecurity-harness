@@ -1,0 +1,13 @@
+services:
+  harness:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      FAKE_MODEL: "true"
+      JWT_SECRET: dev-only-secret-change-me-in-eval
+    volumes:
+      - harness-data:/data
+
+volumes:
+  harness-data:

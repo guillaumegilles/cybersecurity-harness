@@ -1,0 +1,89 @@
+project:
+  type: website
+  render:
+    - docs/index.md
+    - docs/harness.md
+    - docs/architecture.md
+    - docs/workflow.md
+    - docs/safety-model.md
+    - docs/data-model.md
+    - docs/api.md
+    - docs/cli.md
+    - docs/audit.md
+    - docs/configuration.md
+    - docs/testing.md
+    - docs/deployment.md
+  output-dir: _site
+
+website:
+  title: "Alert Investigation Harness"
+  description: >
+    A read-only, evidence-driven AI agent harness that assists SOC analysts
+    with investigating a single security alert.
+  site-url: https://guillaumegilles.github.io/cybersecurity-harness/
+  repo-url: https://github.com/guillaumegilles/cybersecurity-harness
+  repo-actions: [edit, issue]
+  page-navigation: true
+  navbar:
+    background: dark
+    search: true
+    left:
+      - text: "Documentation"
+        href: docs/index.md
+      - text: "API"
+        href: docs/api.md
+      - text: "Safety Model"
+        href: docs/safety-model.md
+    right:
+      - icon: github
+        href: https://github.com/guillaumegilles/cybersecurity-harness
+        aria-label: GitHub
+  sidebar:
+    style: docked
+    search: true
+    collapse-level: 2
+    contents:
+      - text: "Home"
+        href: docs/index.md
+      - text: "Overview"
+        href: docs/harness.md
+      - section: "Design"
+        contents:
+          - text: "Architecture"
+            href: docs/architecture.md
+          - text: "Investigation Workflow"
+            href: docs/workflow.md
+          - text: "Safety Model"
+            href: docs/safety-model.md
+          - text: "Data Model"
+            href: docs/data-model.md
+      - section: "Reference"
+        contents:
+          - text: "API"
+            href: docs/api.md
+          - text: "CLI"
+            href: docs/cli.md
+          - text: "Audit Trail"
+            href: docs/audit.md
+          - text: "Configuration"
+            href: docs/configuration.md
+      - section: "Operations"
+        contents:
+          - text: "Testing"
+            href: docs/testing.md
+          - text: "Deployment"
+            href: docs/deployment.md
+  page-footer:
+    left: "Alert Investigation Harness — GPL-3.0"
+    right: "Built with [Quarto](https://quarto.org)"
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: darkly
+    toc: true
+    toc-depth: 3
+    code-copy: true
+    code-overflow: wrap
+    link-external-newwindow: true

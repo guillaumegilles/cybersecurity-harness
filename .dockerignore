@@ -1,0 +1,10 @@
+
+# Docker
+.git/
+.venv/
+tests/
+specs/
+docs/
+*.db
+.env*
+__pycache__/
