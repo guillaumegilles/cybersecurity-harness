@@ -580,6 +580,26 @@ The task sequence should normally be:
 Implementation may begin only after the specification and plan pass their
 respective gates.
 
+Every specification implementation **MUST** update the project documentation
+under `docs/` so that it accurately reflects the implemented behavior. This
+includes, where affected:
+
+- architecture and component responsibilities (`docs/architecture.md`);
+- workflow states and transitions (`docs/workflow.md`);
+- safety guarantees and their enforcement (`docs/safety-model.md`);
+- data model entities and semantics (`docs/data-model.md`);
+- API and CLI references (`docs/api.md`, `docs/cli.md`);
+- audit event types and reviewer guidance (`docs/audit.md`);
+- configuration, limits, and environment variables (`docs/configuration.md`);
+- test suites and adversarial coverage (`docs/testing.md`);
+- deployment guidance and known limitations (`docs/deployment.md`);
+- the documentation index (`docs/README.md`) when documents are added or
+  removed.
+
+Documentation updates **MUST** land in the same change set as the
+implementation they describe. A feature is not complete while `docs/`
+contradicts the implemented behavior.
+
 Implementation **MUST** stop if:
 
 - a requirement is materially ambiguous;
@@ -603,6 +623,9 @@ A release candidate **MUST** pass:
 - dependency and secret scans;
 - adversarial evaluation;
 - approved scenario regression suite.
+
+A release candidate **MUST NOT** ship with documentation in `docs/` that is
+missing or inconsistent with the released behavior.
 
 The first operational release **MUST** use shadow mode.
 
@@ -649,6 +672,8 @@ Every pull request **MUST** demonstrate:
 - the specification or defect it implements;
 - requirements addressed;
 - tests added or updated;
+- documentation updated under `docs/` (or an explicit statement that no
+  document is affected);
 - security impact;
 - constitutional compliance;
 - relevant evaluation results.
@@ -706,4 +731,4 @@ An emergency change **MUST** have:
 
 ---
 
-**Version**: 1.0.0 | **Ratified**: 2026-08-28 | **Last Amended**: 2026-08-28
+**Version**: 1.1.0 | **Ratified**: 2026-08-28 | **Last Amended**: 2026-08-29
