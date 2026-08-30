@@ -19,10 +19,16 @@ data-access, time, and tool-use boundaries.
 | **Tamper-evident audit** | Append-only, hash-chained trail; reviewers can reconstruct every investigation |
 | **Bounded execution** | Never-disableable budgets for time, tools, evidence, model usage, and retries |
 
+## New here? Start with the onboarding guide
+
+**[→ Onboarding Guide](onboarding.md)** — concepts, hands-on walkthrough, safety
+demos, and pointers to every reference document. Read this first.
+
 ## Documentation
 
 | Document | Description |
 |----------|-------------|
+| [Onboarding Guide](onboarding.md) | **Start here** — concepts, first investigation, reading reports, safety demos |
 | [Overview](harness.md) | High-level architecture diagram and safety model summary |
 | [Architecture](architecture.md) | Components, trust boundaries, data flows, design decisions |
 | [Investigation Workflow](workflow.md) | The deterministic state machine, states, transitions, failure handling |
