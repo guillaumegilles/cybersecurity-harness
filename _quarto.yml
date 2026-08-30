@@ -1,18 +1,7 @@
 project:
   type: website
   render:
-    - docs/index.md
-    - docs/harness.md
-    - docs/architecture.md
-    - docs/workflow.md
-    - docs/safety-model.md
-    - docs/data-model.md
-    - docs/api.md
-    - docs/cli.md
-    - docs/audit.md
-    - docs/configuration.md
-    - docs/testing.md
-    - docs/deployment.md
+    - docs/
   output-dir: _site
 
 website:
